@@ -1,0 +1,1 @@
+[05-Jan-2024 02:18:12 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\EventController::show() in /home1/ekosyste/zas.onta.com.mx/app/Http/Controllers/EventController.php on line 127
