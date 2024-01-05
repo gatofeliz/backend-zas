@@ -112,7 +112,10 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        $event=Event::find($id)->delete();
+        $event=Event::find($id);
+        if($event!=null){
+            $event->delete();
+        }
         if($event){
             return response()->json(["success"=>true,"message"=>"Evento eliminado"]);
         }else{
