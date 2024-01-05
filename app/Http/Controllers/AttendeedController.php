@@ -12,8 +12,8 @@ class AttendeedController extends Controller
     public function store(Request $request)
     {
         $validator=Validator::make($request->all(),["code"=>"required",
-        "attendeed_id"=>"required",
-        "gift_id"=>"required"]);
+        "attendeed_id"=>"required"
+       ]);
         if($validator->fails()){
             return response()->json(["success"=>false,"message"=>"Campos vacios"]);
         }else{
@@ -22,7 +22,7 @@ class AttendeedController extends Controller
             if($invitation!=null){
                 $event = Attendeed::create([
                     "confirmated"=>true,
-                    "event_id"=>$invitation->id,"gift_id"=>$request->gift_id,
+                    "event_id"=>$invitation->id,
                     "attendeed_id"=>$request->attendeed_id
                 ]);
                 if($event){
